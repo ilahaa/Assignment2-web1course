@@ -1,33 +1,36 @@
-// fetch('https://dummyjson.com/products')
-//       .then(res => {return res.json()})
-//       .then(data => {
-//         console.log(data.products[1]);
-//         document.getElementById('productTitle').
-//             innerHTML = data.products[1].title;
-//         document.getElementById('productImg').
-//         src = data.products[1].images[1];
-//     })
-
 fetch('https://dummyjson.com/products')
-  .then(res => { return res.json() })
+  .then(res => res.json())
   .then(data => {
-    data.products.forEach((product, index) => {
-      const productDiv = document.createElement('div');
-      const titleElement = document.createElement('h3');
-      const descElement = document.createElement('p');
-      const imageElement = document.createElement('img');
-
-      imageElement.style.width="100px";
-      titleElement.innerHTML = product.title;
-      imageElement.src = product.images[0];
-
-      productDiv.appendChild(titleElement);
-      productDiv.appendChild(descElement);
-      productDiv.appendChild(imageElement);
-      document.getElementById('productsContainer').appendChild(productDiv);
+    const productsData = data.products.map(product => {
+      return {
+        title: product.title,
+        description: product.description,
+        price: product.price,
+        discount: product.discountPercentage,
+        thumbnail: product.thumbnail,
+        category: product.category,
+        stock: product.stock
+      };
     });
+    console.log(productsData);
+    const productDisplay = productsData.map(product => {
+      return `
+      <div class="product-item">
+          <img class="product-image" src="${product.thumbnail}" alt="${product.title}">
+          <h2 class="product-title">${product.title}</h2>
+          <p class="product-description">${product.description}</p>
+          <span class="product-price">${product.price}</span>
+          <p class="product-discount">${product.discount}</p>
+          <p class="product-category">${product.category}</p>
+          <p class="product-stock">${product.stock}</p>
+        </div>
+      `;
+    });
+
+    document.getElementById("productsContainer").innerHTML = productDisplay.join('');
   })
   .catch(error => {
     console.error('Error message', error);
   });
+
 
