@@ -18,11 +18,12 @@ fetch('https://dummyjson.com/products')
       <div class="product-item">
           <img class="product-image" src="${product.thumbnail}" alt="${product.title}">
           <h2 class="product-title">${product.title}</h2>
-          <p class="product-description">${product.description}</p>
-          <span class="product-price">${product.price}</span>
-          <p class="product-discount">${product.discount}</p>
+          <div class="texts">
           <p class="product-category">${product.category}</p>
-          <p class="product-stock">${product.stock}</p>
+          <p class="product-description">${product.description}</p>
+          <span class="product-price">Price: $${product.price}</span>
+          <p class="product-discount">Discount: ${product.discount}%</p>
+          <p class="product-stock">Stocks: ${product.stock}</p> </div>
         </div>
       `;
     });
