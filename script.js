@@ -10,7 +10,7 @@ fetch('https://dummyjson.com/products')
         thumbnail: product.thumbnail,
         category: product.category,
         stock: product.stock
-      };
+      }; 
     });
     console.log(productsData);
     const productDisplay = productsData.map(product => {
@@ -23,7 +23,8 @@ fetch('https://dummyjson.com/products')
           <p class="product-description">${product.description}</p>
           <span class="product-price">Price: $${product.price}</span>
           <p class="product-discount">Discount: ${product.discount}%</p>
-          <p class="product-stock">Stocks: ${product.stock}</p> </div>
+          <p class="product-stock">Stocks: ${product.stock}</p> </div> 
+          <div class="seeMoreBtn">See More</div>
         </div>
       `;
     });
