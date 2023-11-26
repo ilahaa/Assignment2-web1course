@@ -47,6 +47,15 @@ h1{
 }
 .seeMoreBtn:hover{
     background-color: rgb(24, 145, 24);
+    transition: .5s;
+}
+.seeMoreBtn:hover a{
     color: white;
+    transition: .5s;
+}
+
+.seeMoreBtn a{
+    text-decoration: none;
+    color: black;
     transition: .5s;
 }
