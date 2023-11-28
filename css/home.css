@@ -6,7 +6,7 @@ body {
     overflow-x: hidden;
 }
 h1{
-    margin-bottom:50px;
+    margin-bottom:30px;
 }
 
 #productsContainer {
@@ -49,13 +49,12 @@ h1{
     background-color: rgb(24, 145, 24);
     transition: .5s;
 }
-.seeMoreBtn:hover a{
+.seeMoreBtn:hover{
     color: white;
     transition: .5s;
 }
 
-.seeMoreBtn a{
-    text-decoration: none;
-    color: black;
-    transition: .5s;
+.searchForm{
+    height: 70px;
+    margin-bottom: 20px;
 }

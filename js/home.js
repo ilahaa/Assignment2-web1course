@@ -19,6 +19,7 @@ function getData(data) {
 function processData(fetchedData) {
   return fetchedData.map(product => {
     return {
+      id: product.id,
       title: product.title,
       description: product.description,
       price: product.price,
@@ -29,7 +30,6 @@ function processData(fetchedData) {
     };
   });
 }
-
 
 // Function to generate HTML display for products
 function generateProductDisplay(products) {
@@ -45,7 +45,7 @@ function generateProductDisplay(products) {
           <p class="product-discount">Discount: ${product.discount}%</p>
           <p class="product-stock">Stocks: ${product.stock}</p>
         </div>
-        <div class="seeMoreBtn"><a href="../components/productInfo.html">See More</a></div>
+        <div class="seeMoreBtn">See More</div>
       </div>
     `;
   });
@@ -56,5 +56,7 @@ function displayProducts(products) {
   const productDisplay = generateProductDisplay(products);
   document.getElementById("productsContainer").innerHTML = productDisplay.join('');
 }
+
+
 
 fetchData();
