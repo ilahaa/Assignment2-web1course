@@ -56,34 +56,7 @@ function displayProducts(products) {
   const productDisplay = generateProductDisplay(products);
   document.getElementById("productsContainer").innerHTML = productDisplay.join('');
 
-  // Add event listener for each "See More" button
-  const seeMoreButtons = document.querySelectorAll('.seeMoreBtn');
-  seeMoreButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-      const productId = event.target.getAttribute('data-product-id');
-      const selectedProduct = products.find(product => product.id === parseInt(productId));
-
-      if (selectedProduct) {
-        displayDetails(selectedProduct);
-      } else {
-        console.error("Product not found");
-      }
-    });
-  });
+  displaySelectedProduct(products); //function is in productInfo.js file
 }
-
-
-// Function to display details (selected product) on the console
-function displayDetails(product) {
-  console.log("Selected Product:", product);
-  // Ensure the product exists before accessing its properties
-  if (product) {
-    console.log(`Title: ${product.title}, Price: $${product.price}`);
-  } else {
-    console.error("Product details unavailable");
-  }
-}
-
-
 
 fetchData();
