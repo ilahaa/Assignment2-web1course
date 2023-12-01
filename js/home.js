@@ -64,6 +64,15 @@ function displayProducts(products) {
   const productDisplay = generateProductDisplay(products);
   document.getElementById("productsContainer").innerHTML = productDisplay.join('');
 
+
+  const seeMoreButtons = document.querySelectorAll('.seeMoreBtn');
+  seeMoreButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const productId = button.getAttribute('data-product-id');
+      window.location.href = `components/productInfo.html?id=${productId}`;
+    });
+  });
+
 }
 
 fetchData();

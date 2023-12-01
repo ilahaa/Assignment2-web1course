@@ -20,3 +20,12 @@ async function getProductsById(id) {
             }));
 }
 
+getProductsById(id)
+    .then(product => {
+        if (product) {
+            console.log(product); 
+        } else {
+            console.log('Product not found.');
+        }
+    });
+
