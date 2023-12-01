@@ -1,10 +1,17 @@
 // Function to fetch data from the API
 function fetchData() {
   fetch('https://dummyjson.com/products')
-    .then(res => res.json())
+    .then(response => {
+      if (!response.ok) {
+        // Throw an error if the network response is not okay
+        throw new Error('Network response was not ok.');
+      }
+      return response.json();
+    })
     .then(getData)
     .catch(error => {
       console.error('Error message', error);
+      return null;
     });
 }
 
@@ -51,12 +58,15 @@ function generateProductDisplay(products) {
   });
 }
 
+
 // Function to display products on the webpage
 function displayProducts(products) {
   const productDisplay = generateProductDisplay(products);
   document.getElementById("productsContainer").innerHTML = productDisplay.join('');
 
-  displaySelectedProduct(products); //function is in productInfo.js file
 }
 
 fetchData();
+
+
+

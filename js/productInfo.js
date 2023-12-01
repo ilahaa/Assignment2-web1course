@@ -1,25 +1,22 @@
-  function displaySelectedProduct(products){
-  // Add event listener for each "See More" button
-  const seeMoreButtons = document.querySelectorAll('.seeMoreBtn');
-  seeMoreButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-      const productId = event.target.getAttribute('data-product-id');
-      const selectedProduct = products.find(product => product.id === parseInt(productId));
+let productDetail = document.querySelector(".productDetails");
+// Get the 'id' parameter value from the URL query string
+let id = new URLSearchParams(window.location.search).get('id');
 
-      if (selectedProduct) {
-        displayDetails(selectedProduct);
-      } else {
-        console.error("Product not found");
-      }
-    });
-  });
+// Function to fetch product details by ID asynchronously
+async function getProductsById(id) {
+    return (
+        // Fetch data from the URL constructed with the ID parameter
+        fetch(`${'https://dummyjson.com/products'}/${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    // Throw an error if the network response is not okay
+                    throw new Error('Network response was not ok.');
+                }
+                return response.json();
+            })
+            .catch(error => {
+                console.error("Error message", error);
+                return null;
+            }));
 }
-  function displayDetails(product) {
-    console.log("Selected Product:", product);
-    // Ensure the product exists before accessing its properties
-    if (product) {
-      console.log(`Title: ${product.title}, Price: $${product.price}`);
-    } else {
-      console.error("Product details unavailable");
-    }
-  }
+
