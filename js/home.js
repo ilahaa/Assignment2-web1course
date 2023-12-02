@@ -8,18 +8,14 @@ function fetchData() {
       }
       return response.json();
     })
-    .then(getData)
+    .then(data => {
+      productsData = processData(data.products);
+      displayProducts(productsData);
+    })
     .catch(error => {
       console.error('Error message', error);
       return null;
     });
-}
-
-// Function to process fetched data and generate productsData
-function getData(data) {
-  const productsData = processData(data.products);
-  displayProducts(productsData);
-  console.log(data.products);
 }
 
 // Function to process raw product data and return formatted productsData
@@ -74,6 +70,18 @@ function displayProducts(products) {
   });
 
 }
+let productsData = [];
+// Define a mapping between dropdown values and categories in the JSON
+const categoryMap = {
+  '0': 'all',
+  '1': 'smartphones',
+  '2': 'laptops',
+  '3': 'fragrances',
+  '4': 'skincare',
+  '5': 'groceries',
+  '6': 'home-decoration'
+};
+
 
 fetchData();
 

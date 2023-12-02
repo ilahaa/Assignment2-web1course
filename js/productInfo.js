@@ -25,17 +25,23 @@ function displayProductDetails() {
     getProductDetailsWithId(id)
         .then(product => {
             if (product) {
+                let imagesHTML = '';
+                product.images.forEach(image => {
+                    imagesHTML += `<img class="product-image" src="${image}" alt="">`;
+                });
                 const productItem = `
       <div class="product-item">
-        <img class="product-image" src="${product.thumbnail}" alt="${product.title}">
         <h2 class="product-title">${product.title}</h2>
         <div class="texts">
           <p class="product-category">${product.category}</p>
+          <p class="product-brand">${product.brand}</p>
           <p class="product-description">${product.description}</p>
           <span class="product-price">Price: $${product.price}</span>F
           <p class="product-discount">Discount: ${product.discount}%</p>
+          <p class="product-rating">Discount: ${product.rating}%</p>
           <p class="product-stock">Stocks: ${product.stock}</p>
         </div>
+        <div class="image-gallery">${imagesHTML}</div>
       </div>
     `;
                 productDetail.innerHTML = productItem;
