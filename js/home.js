@@ -70,9 +70,12 @@ function displayProducts(products) {
   });
 
 }
+
+
+//store products data in empty array
 let productsData = [];
 // Define a mapping between dropdown values and categories in the JSON
-const categoryMap = {
+const categories = {
   '0': 'all',
   '1': 'smartphones',
   '2': 'laptops',
@@ -81,6 +84,23 @@ const categoryMap = {
   '5': 'groceries',
   '6': 'home-decoration'
 };
+
+
+// Function to filter products based on category
+function changeCategory(category) {
+  const selectedCategory = categories[category];
+  const selectedProducts = productsData.filter(product => {
+    // Display all products if 'all' is selected or filter by category
+    return selectedCategory === 'all' || product.category.toLowerCase() === selectedCategory;
+  });
+  displayProducts(selectedProducts);
+}
+
+const selectCategory = document.querySelector('.selectCategory');
+selectCategory.addEventListener('change', function () {
+  const selectedCategory = this.value;
+  changeCategory(selectedCategory);
+});
 
 
 fetchData();
