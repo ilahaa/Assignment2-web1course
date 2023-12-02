@@ -56,5 +56,22 @@ h1{
 
 .searchForm{
     height: 70px;
-    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.searchForm input{
+    height: 24px;
+}
+.searchForm button{
+    height: 30px;
+}
+
+.search{
+    display: flex;
+}
+
+.selectCategory{
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
 }

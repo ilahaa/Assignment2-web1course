@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="./js/home.js"></script>
     <script defer src="./js/productInfo.js"></script>
 </head>
@@ -15,10 +17,26 @@
 
     <h1>Products</h1>
 
-    <form class="searchForm">
-        <input type="text" placeholder="Search for category" name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
+    <div class="search">
+
+        <select name="selectCategory" class="selectCategory">
+            <option value="0">All Categories</option>
+            <option value="1">Smartphones</option>
+            <option value="2">Laptops</option>
+            <option value="3">Fragrances</option>
+            <option value="4">Skincare</option>
+            <option value="5">Groceries</option>
+            <option value="6">Home-decoration</option>
+        </select>
+
+
+        <form class="searchForm">
+            <input type="text" placeholder="Search for title" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+
+    </div>
 
     <div id="productsContainer">
     </div>
