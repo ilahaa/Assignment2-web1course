@@ -103,6 +103,28 @@ selectCategory.addEventListener('change', function () {
 });
 
 
+
+// Select the search form and input element
+const searchForm = document.querySelector('.searchForm');
+const searchForTitle = document.querySelector('.searchForTitle');
+
+// Function to search products by title
+function searchByTitle(title) {
+  // Convert the query to lowercase for case-insensitive comparison
+  const searchInput = title.toLowerCase().trim();
+
+  // Filter products whose title contains the search query
+  const filteredProducts = productsData.filter(product => {
+    const productTitle = product.title.toLowerCase();
+    return productTitle.includes(searchInput);
+  });
+
+  // Display the matching products
+  displayProducts(filteredProducts);
+}
+
+
+
 fetchData();
 
 
