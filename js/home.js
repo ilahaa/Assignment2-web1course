@@ -123,11 +123,21 @@ function searchByTitle(title) {
   displayProducts(filteredProducts);
 }
 
-// Add event listener to the search form
+// Add event listener to the search form for submit
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault();
   searchByTitle(searchForTitle.value);
 });
+
+
+// Add event listener to capture Enter key press on the input field
+searchForTitle.addEventListener('keydown', function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    searchByTitle(searchForTitle.value);
+  }
+});
+
 
 
 fetchData();
