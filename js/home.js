@@ -123,6 +123,11 @@ function searchByTitle(title) {
   displayProducts(filteredProducts);
 }
 
+// Add event listener to the search form
+searchForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  searchByTitle(searchForTitle.value);
+});
 
 
 fetchData();
