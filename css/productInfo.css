@@ -1,51 +1,68 @@
-body{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x:hidden;
+body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
 }
+
+.product-item {
+  width: 450px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #d9d9d9;
+  box-shadow: 0px 2px 23px 8px rgba(0, 0, 0, 0.56);
+}
+
+.texts{
+  width: 80%;
+}
+
 .image-gallery {
-    position: relative;
-    max-width: 200px; 
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  
-  .prev-btn,
-  .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 8px 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    z-index: 1; 
-  }
-  
-  .prev-btn {
-    left: 5px;
-  }
-  
-  .next-btn {
-    right: 5px; 
-  }
-  
-  .slider-container {
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .slider {
-    display: flex;
-    transition: transform 0.3s ease;
-  }
-  
-  .slider img {
-    width: 200px;
-    height: auto;
-  }
-  
+  position: relative;
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev-btn {
+  left: 5px;
+}
+
+.next-btn {
+  right: 5px;
+}
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.slider img {
+  width: 200px;
+  height: auto;
+}
