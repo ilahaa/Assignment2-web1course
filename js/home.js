@@ -1,4 +1,5 @@
 // Function to fetch data from the API
+
 function fetchData() {
   fetch('https://dummyjson.com/products')
     .then(response => {
@@ -121,6 +122,8 @@ function searchByTitle(title) {
 
   // Display the matching products
   displayProducts(filteredProducts);
+
+
 }
 
 // Add event listener to the search form for submit
