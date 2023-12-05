@@ -27,7 +27,7 @@ function displayProductDetails() {
       if (product) {
         let imagesHTML = '';
         product.images.forEach(image => {
-          imagesHTML += `<img class="product-image" src="${image}" alt="">`;
+          imagesHTML += `<img class="product-image" src="${image}" alt="image" width="250" height="250">`;
         });
         const productItem = `
       <div class="product-item">
@@ -47,11 +47,40 @@ function displayProductDetails() {
       </div>
     `;
         productDetail.innerHTML = productItem;
+
+        slider();
       }
+      
       else {
         console.log('Product not found.');
       }
     });
+}
+
+function slider(){
+  const prevButton = document.querySelector('.prev-btn');
+  const nextButton = document.querySelector('.next-btn');
+  const images = document.querySelectorAll('.product-image');
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach(image => {
+      image.style.display = 'none';
+    });
+    images[index].style.display = 'block';
+  }
+  showImage(currentIndex);
+  
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length; //when image index is 0, go to index 4.
+    showImage(currentIndex);
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length; //when image index is 4, return back to index 0.
+    showImage(currentIndex);
+  });
 }
 
 displayProductDetails();

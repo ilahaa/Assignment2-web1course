@@ -55,7 +55,6 @@ function generateProductDisplay(products) {
   });
 }
 
-
 // Function to display products on the webpage
 function displayProducts(products) {
   const productDisplay = generateProductDisplay(products);
@@ -71,7 +70,6 @@ function displayProducts(products) {
   });
 
 }
-
 
 //store products data in empty array
 let productsData = [];
