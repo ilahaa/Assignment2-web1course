@@ -35,7 +35,7 @@ function displayProductDetails() {
         <div class="texts">
           <p class="product-brand"><span>Brand: </span> ${product.brand}</p>
           <p class="product-description"><span>Decription: </span>${product.description}</p>
-          <span class="product-price"><span>Price: </span> $${product.price}</span>
+          <p class="product-price"><span>Price: </span> $${product.price}</p>
           <p class="product-rating"><span>Rating: </span> ${product.rating}%</p>
           <p class="product-stock"><span>Stocks: </span> ${product.stock}</p>
         </div>

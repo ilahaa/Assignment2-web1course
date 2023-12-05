@@ -43,11 +43,11 @@ function generateProductDisplay(products) {
         <img class="product-image" src="${product.thumbnail}" alt="${product.title}">
         <h2 class="product-title">${product.title}</h2>
         <div class="texts">
-          <p class="product-category">${product.category}</p>
-          <p class="product-description">${product.description}</p>
-          <span class="product-price">Price: $${product.price}</span>
-          <p class="product-discount">Discount: ${product.discount}%</p>
-          <p class="product-stock">Stocks: ${product.stock}</p>
+          <p class="product-category"><span>Category: </span> ${product.category}</p>
+          <p class="product-description"><span>Description: </span>${product.description}</p>
+          <p class="product-price"><span>Price: </span> $${product.price}</p>
+          <p class="product-discount"><span>Discount: </span> ${product.discount}%</p>
+          <p class="product-stock"><span>Stocks: </span> ${product.stock}</p>
         </div>
         <div class="seeMoreBtn" data-product-id="${product.id}">See More</div>
       </div>
@@ -65,7 +65,7 @@ function displayProducts(products) {
   seeMoreButtons.forEach(button => {
     button.addEventListener('click', () => {
       const productId = button.getAttribute('data-product-id');
-      window.location.href = `components/productInfo.html?id=${productId}`;
+      window.location.href = `components/productInfo.html?id=${productId}`;z
     });
   });
 

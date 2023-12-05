@@ -19,13 +19,23 @@ body {
   box-shadow: 0px 2px 23px 8px rgba(0, 0, 0, 0.56);
 }
 
-.texts{
+.texts {
   width: 80%;
+}
+
+.product-price {
+  color: green;
+}
+
+.texts span {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
 }
 
 .image-gallery {
   position: relative;
-  width: 250px; 
+  width: 250px;
   margin: 0 auto;
 }
 
@@ -44,6 +54,7 @@ body {
 .slider .product-image:first-child {
   display: block;
 }
+
 .prev-btn,
 .next-btn {
   position: absolute;
