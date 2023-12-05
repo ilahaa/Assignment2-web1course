@@ -65,7 +65,7 @@ function displayProducts(products) {
   seeMoreButtons.forEach(button => {
     button.addEventListener('click', () => {
       const productId = button.getAttribute('data-product-id');
-      window.location.href = `../productInfo.html?id=${productId}`; 
+      window.location.href = `./productInfo.html?id=${productId}`;
     });
   });
 

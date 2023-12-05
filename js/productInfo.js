@@ -6,7 +6,7 @@ let id = new URLSearchParams(window.location.search).get('id');
 async function getProductDetailsWithId(id) {
   return (
     // Fetch data from the URL constructed with the ID parameter
-    fetch(`${'https://dummyjson.com/products'}/${id}`)
+    fetch(`https://dummyjson.com/products/${id}`)
       .then(response => {
         if (!response.ok) {
           // an error if the network response is not okay
