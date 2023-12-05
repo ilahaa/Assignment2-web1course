@@ -65,9 +65,7 @@ function displayProducts(products) {
   seeMoreButtons.forEach(button => {
     button.addEventListener('click', () => {
       const productId = button.getAttribute('data-product-id');
-      //I used "assign", instead of "href", for preventing error when hosting the website
-      window.location.assign(`components/productInfo.html?id=${productId}`);
-      // window.location.href = `components/productInfo.html?id=${productId}`; 
+      window.location.href = `./components/productInfo.html?id=${productId}`; 
     });
   });
 
